@@ -1,0 +1,26 @@
+{
+  "name": "404-jebouquine-2605",
+  "version": "1.0.0",
+  "description": "> Une librairie en ligne moderne, simple et chaleureuse, pensée pour retrouver l'expérience et l'authenticité d'une librairie traditionnelle sur le Web.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch docs/kit-graphique/ressources/styles/src/sass/main.sass:docs/kit-graphique/ressources/styles/dist/css/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/404-Les-Bouquetins/404-jebouquine-2605.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/404-Les-Bouquetins/404-jebouquine-2605/issues"
+  },
+  "homepage": "https://github.com/404-Les-Bouquetins/404-jebouquine-2605#readme",
+  "devDependencies": {
+    "sass": "^1.105.0"
+  }
+}
