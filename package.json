@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "sass": "sass --watch docs/kit-graphique/ressources/styles/src/sass/main.sass:docs/kit-graphique/ressources/styles/dist/css/main.css"
+    "sass": "sass --watch docs/kit-graphique/ressources/styles/src/sass/main.sass:docs/kit-graphique/ressources/styles/dist/css/main.css",
+    "dev":  "vite"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/404-Les-Bouquetins/404-jebouquine-2605#readme",
   "devDependencies": {
-    "sass": "^1.105.0"
+    "sass": "^1.105.0",
+    "vite": "^8.3.1"
   }
 }
