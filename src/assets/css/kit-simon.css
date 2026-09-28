@@ -1,0 +1,156 @@
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600&display=swap);
+
+:root {
+    --crm-primary: #1b296a;
+    --crm-secondary: #ed6840;
+    --background-color: #fff;
+    --bg-light-grey: #f5f6f9;
+    --cream: #f0e7e2;
+    --light-cream: #f5eeeb;
+    --dark-text: #000;
+    --light-text: #fff;
+
+    --heading-font: 'Montserrat', sans-serif;
+    --text-font: 'Sarabun', sans-serif;
+}
+
+body {
+    font-family: var(--text-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading-font);
+}
+
+.colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .colors__heading {
+        width: 100%;
+    }
+
+    .colors__color {
+        border: #000 1px solid;
+        border-radius: 4px;
+        width: 140px;
+        height: 140px;
+        padding: 12px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+
+        .colors__color__name {
+            margin: 0;
+        }
+    }
+
+    .colors__color-primary {
+        background: var(--crm-primary);
+        color: var(--light-text);
+    }
+
+    .colors__color-secondary {
+        background: var(--crm-secondary);
+        color: var(--light-text);
+    }
+
+    .colors__color-grey {
+        background: var(--bg-light-grey);
+    }
+
+    .colors__color-cream {
+        background: var(--cream);
+    }
+
+    .colors__color-light_cream {
+        background: var(--light-cream);
+    }
+}
+
+.typography {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    .typography__heading {
+        width: 100%;
+    }
+
+    .typography__font {
+        border: #000 1px solid;
+        border-radius: 4px;
+        width: 140px;
+        height: 140px;
+        padding: 12px;
+
+        .typography__font__name {
+            margin: 0;
+        }
+    }
+
+    .typography__font-montserrat * {
+        font-family: var(--heading-font);
+    }
+
+    .typography__font-sarabun * {
+        font-family: var(--text-font);
+    }
+}
+
+.components {
+    .components__buttons {
+
+        div {
+            margin: 10px 0;
+        }
+
+        .buttons-primary {
+            --btn-bg-def: var(--crm-primary);
+            --btn-bg-hover: #162258;
+            --btn--bg-dis: #6473b5;
+            --btn-text: var(--light-text);
+        }
+
+        .buttons-secondary {
+            --btn-bg-def: var(--crm-secondary);
+            --btn-bg-hover: #ea5635;
+            --btn--bg-dis: #ffb28b;
+            --btn-text: var(--light-text);
+        }
+
+        button {
+            background: var(--btn-bg-def);
+            color: var(--btn-text);
+            height: 44px;
+            width: 180px;
+            box-sizing: border-box;
+            border-radius: 50px;
+            border: none;
+            font-family: var(--text-font);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .button-hover {
+            background: var(--btn-bg-hover);
+            box-shadow: 2px 4px 4px #0004;
+        }
+
+        .button-pressed {
+            background: var(--btn-bg-hover);
+            border: 2px solid #0008;
+        }
+
+        .button-disabled {
+            background: var(--btn--bg-dis);
+        }
+    }
+}
