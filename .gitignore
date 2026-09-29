@@ -29,3 +29,6 @@ Thumbs.db
 # Sass
 .sass-cache/
 
+# swap
+*.swp
+*.swo
