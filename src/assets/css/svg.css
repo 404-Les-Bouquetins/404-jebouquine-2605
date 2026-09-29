@@ -1,0 +1,8 @@
+.test {
+    fill: #FF0;
+    transition: all ease 1s;
+}
+
+.test:hover {
+    fill: red;
+}
