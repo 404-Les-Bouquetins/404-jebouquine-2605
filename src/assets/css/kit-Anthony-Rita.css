@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800&display=swap');      
+:root
+{
+    --crm-primary:#1b296a;
+    --crm-secondary:#ed6840;
+    --body-bg:#F5F5F5;
+    --cream:#F0E7E2;
+    --light-cream:#F5EEEB;
+    --light-grey:#F5F6F9;
+    --titre-police:'Montserrat',sans-serif;
+    --texte-courant:'Sarabun',sans-serif;
+}
+table
+{
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+th:last-child
+{
+    width: 150px;
+}
+th,td
+{
+    border: 2px solid;
+}
+.PaletteCouleurs tbody tr:first-child td:first-child
+{
+    background-color: var(--crm-primary);
+}
+.PaletteCouleurs tbody tr:nth-child(2) td:first-child
+{
+    background-color: var(--crm-secondary);
+}
+.PaletteCouleurs tbody tr:nth-child(3) td:first-child
+{
+    background-color: var(--body-bg);
+}
+.PaletteCouleurs tbody tr:nth-child(4) td:first-child
+{
+    background-color: var(--cream);
+}
+.PaletteCouleurs tbody tr:nth-child(5) td:first-child
+{
+    background-color: var(--light-cream);
+}
+.PaletteCouleurs tbody tr:last-child td:first-child
+{
+    background-color: var(--light-grey);
+}
+.Typographie tbody tr:first-child td:last-child
+{   
+    font-family: var(--titre-police);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.Typographie tbody tr:last-child td:last-child
+{
+    font-family: var(--texte-courant);
+}
+/* Composant Nav */
+.composants__Nav
+{
+    width: 400px;
+    height: 55px;
+    border: 2px solid #00000026;
+    border-radius: 50px;
+    background-color: var(--light-grey);
+}
+.composants__Nav ul
+{
+    display: flex;
+    height: 100%;
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.composants__Nav ul li img
+{
+   size: absolute;
+}
+.composants__Nav ul li
+{
+    display: flex;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+}
+.composants__Nav ul li:hover
+{
+    background-color: var(--crm-secondary);
+}
+.composants__Nav ul li:hover img
+{
+    filter: invert(17%) sepia(45%) saturate(1914%)
+            hue-rotate(201deg) brightness(87%) contrast(101%);
+}
+/* Composants bouton tag*/
+.Bouton__tag
+{
+    border: none;
+    width: fit-content;
+    padding: 13px 15px;
+    border-radius: 69px;
+    background-color: var(--light-grey);
+}
+/* .Bouton__tag
+{
+    color: var(--body-bg);
+    background-color: var(--crm-secondary);
+} */
