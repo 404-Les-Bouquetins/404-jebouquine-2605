@@ -1,21 +1,168 @@
 @use "../base/_palette_couleurs" as *
-    
-$txt-crm-header:    Georgia, serif
-$txt-crm-body:      Verandana, sans-serif
-$txt-crm-dys:       "OpenDyslexic", sans-serif
+@use "sass:map";
+
+@function police($nom)
+{
+  @if map.has-key($polices_ecriture, $nom)
+    @return map.get($polices_ecriture, $nom);
+
+  @error "La police '#{$nom}' n'existe pas dans la map $polices_ecriture.";
+}
+
+$polices_ecriture:
+(
+	txt-titre:    ('Monserrat', serif),
+	txt-body:     ('Sarabun', sans-serif),
+	txt-dys:      ("OpenDyslexic", sans-serif),
+)
 
 // ╭─╮╭─╮╷  ╭─╴╶┬╴╶┬╴╭─╴   ╭─╮╷╶┬╴╭─╴
 // ├─╯├─┤│  ├╴  │  │ ├╴    ╰─╮│ │ ├╴ 
 // ╵  ╵ ╵╰─╴╰─╴ ╵  ╵ ╰─╴   ╰─╯╵ ╵ ╰─╴
-//$couleur-principale:
 
-$couleur-secondaire-1: $crm-bleu
-$couleur-secondaire-2: $crm-orange
+$txt-light: 	#FFFFFF
+$txt-dark:		#000000
 
-//$couleur-accent-1:
-//$couleur-accent-2:
+@function couleur_palette($theme, $color)
+{
+  @if map.has-key($palette_couleurs, $theme)
+  {
+    $theme-map: map.get($palette_couleurs, $theme);
 
-$AE-error:		$AE-crm-error
-$AE-warning:	$AE-crm-warning
-$AE-info:		$AE-crm-info
-$AE-sucess:		$AE-crm-sucess
+    @if map.has-key($theme-map, $color)
+    {
+      @return map.get(map.get($theme-map, $color), color);
+    }
+
+    @error "La couleur '#{$color}' n'existe pas dans le thème '#{$theme}'.";
+  }
+
+  @error "Le thème '#{$theme}' n'existe pas dans la map $palette_couleurs.";
+}
+
+
+$palette_couleurs
+(
+    light:      $light,
+    dark:       $dark,
+    actions:    $actions,
+)
+
+//TODO: CHECK ME
+$light:
+(
+	primary:
+	(
+		color:			$crm-orange,
+		description:	"Orange CRM",
+		txt-color:		$txt-light,
+	),
+	accent:
+	(
+		color:			$crm-bleu,
+		description:	"Bleu CRM",
+		txt-color:		$txt-light,
+	),
+	secondary-neutral-light:
+	(
+		color:			$bg-light-grey,
+		description:	"Fond neutre - clair",
+		txt-color:		$txt-dark,
+	),
+	secondary-neutral-dark:
+	(
+		color:			$bg-grey,
+		description:	"Fond neutre - Foncé",
+		txt-color:		$txt-dark,
+	),
+	secondary-warm-light:
+	(
+		color:			$bg-thick-cream,
+		description:	"Fond chaud - clair",
+		txt-color:		$txt-dark,
+	),
+	secondary-warm-dark:
+	(
+		color:			$bg-light-cream,
+		description:	"Fond chaud - foncé",
+		txt-color:		$txt-dark,
+	)
+)
+
+//TODO: DO ME
+$dark:
+(
+	primary:
+	(
+		color:			$crm-orange,
+		description:	"Orange CRM",
+		txt-color:		$txt-light,
+	),
+	accent:
+	(
+		color:			$crm-bleu,
+		description:	"Bleu CRM",
+		txt-color:		$txt-light,
+	),
+	secondary-neutral-light:
+	(
+		color:			$bg-light-grey,
+		description:	"Fond neutre - clair",
+		txt-color:		$txt-dark,
+	),
+	secondary-neutral-dark:
+	(
+		color:			$bg-grey,
+		description:	"Fond neutre - Foncé",
+		txt-color:		$txt-dark,
+	),
+	secondary-warm-light:
+	(
+		color:			$bg-thick-cream,
+		description:	"Fond chaud - clair",
+		txt-color:		$txt-dark,
+	),
+	secondary-warm-dark:
+	(
+		color:			$bg-light-cream,
+		description:	"Fond chaud - foncé",
+		txt-color:		$txt-dark,
+	)
+)
+
+
+@function couleur_action($couleur, $color)
+{
+    @if map.has-key($polices_ecriture, $nom)
+        @return map.get( map.get($palette_couleurs, $theme), $color);
+
+    @error "La couleur '#{$nom}' n'existe pas dans la map $palette_couleurs.";
+}
+$actions:
+(
+	error:
+	(
+		color:			$AE-crm-error,
+		description:	"ActionEvent erreur",
+		txt-color:		$txt-light,
+	),
+	warning:
+	(
+		color:			$AE-crm-warning,
+		description:	"ActionEvent warning",
+		txt-color:		$txt-light,
+	),
+	info:
+	(
+		color:			$AE-crm-info,
+		description:	"ActionEvent info",
+		txt-color:		$txt-light,
+	),
+	success:
+	(	
+		color:			$AE-crm-sucess,
+		description:	"ActionEvent succès",
+		txt-color:		$txt-light,
+	),
+)
+

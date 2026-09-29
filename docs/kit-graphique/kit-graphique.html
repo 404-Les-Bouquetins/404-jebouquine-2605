@@ -1,43 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kit graphique</title>
-    <link rel="stylesheet" href="./ressources/styles/src/sass/main.sass">
-</head>
-<body>
-    <main>
-        <h1>
-            Kit graphique
-        </h1>
-        <p>
-            --version ek
-        </p>
-        <section id="couleurs">
-            <h2>
-                couleurs
-            </h2>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Kit graphique</title>
+		<link rel="stylesheet" href="./ressources/styles/src/sass/main.sass">
+	</head>
+	<body>
+		<main>
+			<h1>
+				Kit graphique
+			</h1>
+			<p>
+				--version ek
+			</p>
+            <section>
+                <nav>
+                    <h2>Sections</h2>
+                    <ul>
+                        <li><a href="#couleurs">Palette de couleurs</a></li>
+                        <li><a href="#typo">Typographie</a></li>
+                        <li><a href="#btns-cptns">Boutons et composants</a></li>
+                        <li><a href="#visuels">Icônes et visuels</a></li>
+                        <li><a href="#responsive">Responsive Design</a></li>
+                        <li><a href="#access">Accessibilité</a></li>
+                    </ul>
+                </nav>
+            </section>
+			<section id="couleurs">
+				<h2>Palette de couleurs</h2>
+				<section id="principales">
+					<h3>Princpcipales</h3>
+					<ul>
+						<li>
+							<div class="color-display--primary"></div>
+						</li>
+						<li>
+							<div class="color-display--accent"></div>
+						</li>
+					</ul>
+				</section>
+				<section id="secondaires">
+					<h3>Secondaires</h3>
+					<ul>
+						<li>
+							<div class="color-display--secondary-neutral-light"></div>
+						</li>
+						<li>
+							<div class="color-display--secondary-neutral-dark"></div>
+						</li>
+						<li>
+							<div class="color-display--secondary-warm-light"></div>
+						</li>
+						<li>
+							<div class="color-display--secondary-warm-dark"></div>
+						</li>
+					</ul>
+				</section>
+                <div class="container__resizable">
+                    ma div redimensionnable
+                </div>
+			</section>
+			<section id="typographies">
+				<h2>
+					typographies
+				</h2>
+                <h1>Exemple H1 - Titre principal</h1>
+                <h2>Exemple H2 - Titre secondaire</h2>
+                <h3>Exemple H3 - Dous-titres</h3>
+                <h4>Exemple H4 - Petit titre</h4>
+                <a href="#">exemple delien hypertexte</a>
+                <textarea name="test" id="hoho"></textarea>
+			</section>
+			<section id="composants">
+				<h2>
+					composants
+				</h2>
 
-        </section>
-        <section id="typographies">
-            <h2>
-                typographies
-            </h2>
+			</section>
+			<section id="icones">
+				<h2>
+					icones
+				</h2>
 
-        </section>
-        <section id="composants">
-            <h2>
-                composants
-            </h2>
-
-        </section>
-        <section id="icones">
-            <h2>
-                icones
-            </h2>
-
-        </section>
-    </main>
-</body>
+			</section>
+		</main>
+	</body>
 </html>

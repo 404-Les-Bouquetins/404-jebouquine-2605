@@ -1,0 +1,26 @@
+@use "sass:map"
+@use "../abstracts/variables" as *
+
+
+.color-display
+	@each $name, $data in $palette_couleurs
+		$color:			map.get($data, color)
+		$description:	map.get($data, description)
+
+		&--#{$name}
+			display: flex
+			align-items: center
+			gap: 0.5rem
+
+			&::before
+				content: ""
+				width: 25px
+				height: 25px
+				border-radius: 50%
+				display: inline-block
+				background-color: $color
+				border-style: solid
+				border-color: #2c2c2c
+
+			&::after
+				content: "#{$color} - #{$description}"
