@@ -1,0 +1,40 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 37 40"
+    width="37"
+    height="40"
+    fill="#FFF"
+    stroke="#000"
+    stroke-width="3.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+>
+    <!-- Maison -->
+    <path
+        d="
+            M 1.6 14.43
+            L 18.1 1.6
+            L 34.6 14.43
+
+            V 34.6
+
+            A 3.67 3.67 0 0 1 30.93 38.27
+
+            H 5.27
+
+            A 3.67 3.67 0 0 1 1.6 34.6
+
+            Z
+        "
+    />
+
+    <!-- Porte -->
+    <path
+        d="
+            M 12.6 38.27
+            V 19.93
+            H 23.6
+            V 38.27
+        "
+    />
+</svg>
