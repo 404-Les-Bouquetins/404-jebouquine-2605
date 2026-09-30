@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/kit-Anthony-Rita.css">
+    <script src="./js/BoutonTag.js" defer></script>
     <title>Kit-graphique-JeBonquine</title>
 </head>
 
@@ -38,39 +39,52 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td><div></div></td>
+                        <td>text</td>
                         <td>crm-primary</td>
                         <td><code>#1b296a</code></td>
                         <td><code>rgb(27 41 106)</code></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <!-- &nbsp; quand cellule vide -->
+                        <td>text</td>
                         <td>crm-secondary</td>
                         <td><code>#ed6840</code></td>
                         <td><code>rgb(237 104 64)</code></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>text</td>
                         <td>body-bg</td>
                         <td><code>#F5F5F5</code></td>
                         <td><code>rgb(245 245 245)</code></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>text</td>
                         <td>cream</td>
                         <td><code>#F0E7E2</code></td>
                         <td><code>rgb(240 237 226)</code></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>text</td>
                         <td>light-cream</td>
                         <td><code>#F5EEEB</code></td>
                         <td><code>rgb(245 238 235)</code></td>
                     </tr>
                     <tr>
-                        <td></td>
+                        <td>text</td>
                         <td>light-grey</td>
                         <td><code>#F5F6F9</code></td>
+                        <td><code>rgb(245 246 249)</code></td>
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td>bg-inactive</td>
+                        <td><code>#e3e3e3</code></td>
+                        <td><code>rgb(245 246 249)</code></td>
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td>txt-inactive</td>
+                        <td><code>#8b8b8b</code></td>
                         <td><code>rgb(245 246 249)</code></td>
                     </tr>
                 </tbody>
@@ -106,17 +120,50 @@
                 <h3>Navbar</h3>
                     <nav class="composants__Nav">
                         <ul>
-                            <li><img src="./img/home.svg" alt="icone Acceuil"></li>
-                            <li><img src="./img/panier.svg" alt="icone panier"></li>
-                            <li><img src="./img/compte.svg" alt="icone compte"></li>
-                            <li><img src="./img/liste.svg" alt="icone wishlist"></li>
+                            <li class="composants__Nav--listes"><img src="./img/home.svg" alt="icone Acceuil"></li>
+                            <li class="composants__Nav--listes"><img src="./img/panier.svg" alt="icone panier"></li>
+                            <li class="composants__Nav--listes"><img src="./img/compte.svg" alt="icone compte"></li>
+                            <li class="composants__Nav--listes"><img src="./img/liste.svg" alt="icone wishlist"></li>
                         </ul>
                     </nav>
             </section>
-            <section class="composants">
+            <section class="composants__bouton">
                 <h3>Bouton Tag</h3>
-                <button class="Bouton__tag">hshq</button>
+                <button class="Bouton__tag inactive">inactive</button>
+                <button class="Bouton__tag idle">idle / active</button>
             </section>
+            <section class="composants">
+                <h3>Cards</h3>
+                <section class="cards">
+                    <h4>Laetitia Colombani</h4>
+                    <p>18,90 €</p>
+                    <img src="./img/couverture.webp" alt="couverture du livre">
+                </section>
+            </section>
+                <section class="composants">
+                    <h3>Carousel Cards</h3>
+                    <section class="carousel__cards">
+                        <button class="left"><</button>
+                        <section class="carousel__cards__carousel">
+                            <section class="cards">
+                                <h4>Laetitia Colombani</h4>
+                                <p>18,90 €</p>
+                                <img src="./img/couverture.webp" alt="couverture du livre">
+                            </section>
+                            <section class="cards">
+                                <h4>Laetitia Colombani</h4>
+                                <p>18,90 €</p>
+                                <img src="./img/couverture.webp" alt="couverture du livre">
+                            </section>
+                                <section class="cards">
+                                <h4>Laetitia Colombani</h4>
+                                <p>18,90 €</p>
+                                <img src="./img/couverture.webp" alt="couverture du livre">
+                            </section>
+                        </section>
+                        <button class="right">></button>
+                    </section>
+                </section>
         </section>
     </main>
 </body>

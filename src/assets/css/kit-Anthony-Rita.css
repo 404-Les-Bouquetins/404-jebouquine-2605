@@ -8,9 +8,12 @@
     --cream:#F0E7E2;
     --light-cream:#F5EEEB;
     --light-grey:#F5F6F9;
+    --bg-inactive:#e3e3e3;
+    --txt-inactive:#8b8b8b;
     --titre-police:'Montserrat',sans-serif;
     --texte-courant:'Sarabun',sans-serif;
 }
+/* style Tableaux*/
 table
 {
     border-collapse: collapse;
@@ -22,14 +25,18 @@ th:last-child
 }
 th,td
 {
-    border: 2px solid;
+    border: 2px solid #000;
 }
+
+/*Tableau Couleur*/
 .PaletteCouleurs tbody tr:first-child td:first-child
 {
+    color: #fff;
     background-color: var(--crm-primary);
 }
 .PaletteCouleurs tbody tr:nth-child(2) td:first-child
 {
+    color: #fff;
     background-color: var(--crm-secondary);
 }
 .PaletteCouleurs tbody tr:nth-child(3) td:first-child
@@ -44,10 +51,22 @@ th,td
 {
     background-color: var(--light-cream);
 }
-.PaletteCouleurs tbody tr:last-child td:first-child
+.PaletteCouleurs tbody tr:nth-child(6) td:first-child
 {
+    color: var(--crm-primary);
     background-color: var(--light-grey);
 }
+.PaletteCouleurs tbody tr:nth-child(7) td:first-child
+{
+    color: var(--txt-inactive);
+    background-color: var(--bg-inactive);
+}
+.PaletteCouleurs tbody tr:last-child td:first-child
+{
+   background-color: var(--txt-inactive);
+}
+
+/* Tableau Typographie*/
 .Typographie tbody tr:first-child td:last-child
 {   
     font-family: var(--titre-police);
@@ -77,11 +96,11 @@ th,td
     align-items: center;
     justify-content: space-evenly;
 }
-.composants__Nav ul li img
+.composants__Nav img
 {
    size: absolute;
 }
-.composants__Nav ul li
+.composants__Nav li
 {
     display: flex;
     border-radius: 100%;
@@ -90,11 +109,12 @@ th,td
     justify-content: center;
     align-items: center;
 }
-.composants__Nav ul li:hover
+.composants__Nav--listes:hover
 {
+    cursor: pointer;
     background-color: var(--crm-secondary);
 }
-.composants__Nav ul li:hover img
+.composants__Nav--listes:hover img
 {
     filter: invert(17%) sepia(45%) saturate(1914%)
             hue-rotate(201deg) brightness(87%) contrast(101%);
@@ -102,14 +122,76 @@ th,td
 /* Composants bouton tag*/
 .Bouton__tag
 {
+    cursor: pointer;
     border: none;
     width: fit-content;
     padding: 13px 15px;
     border-radius: 69px;
+}
+.Bouton__tag.inactive
+{
+    color: var(--txt-inactive);
+    background-color: var(--bg-inactive);
+}
+.Bouton__tag.idle
+{
+    color: black;
     background-color: var(--light-grey);
 }
-/* .Bouton__tag
+.Bouton__tag.active
 {
-    color: var(--body-bg);
+    color: #fff;
     background-color: var(--crm-secondary);
-} */
+}
+/* Cards carroussel */
+.cards
+{
+    width: 124px;
+    height: 170px;
+    border-radius: 10px;
+    background-color:var(--light-grey);
+    box-shadow:0px 4px 4px rgba(00, 00, 00, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+.cards h4
+{
+    margin: 0;
+    font-weight: normal;
+    font-size: 0.75rem;
+    text-align: center;
+    margin-bottom: 1px;
+}
+.cards p
+{
+    margin: 0;
+    color: var(--crm-primary);
+    text-align: center;
+    font-weight: bolder;
+}
+.cards img{
+    margin-top: 11px;
+    margin-left: 11px;
+    margin-right: 11px;
+    margin-bottom: 4px;
+    border-radius: 6px;
+    object-fit: cover;
+    height: 102px;
+    width: 102px;
+    order: -2;
+}
+
+/* Carousel */
+.carousel__cards
+{
+    display: flex;
+    width: 412px;
+    gap:25px;
+}
+.carousel__cards__carousel
+{
+    display: flex;
+    width: 270px;
+    gap: 22px;
+    overflow-x:auto;
+}
