@@ -1,11 +1,27 @@
 @use "../abstracts/_variables" as *
-    
+
+body
+    background-color: palette_couleur(light, secondary-warm-dark)
+    font: police(txt-body)
+
 main
-    background-color: #131212
-    font: $polices_ecriture()
+    display: flex
+    flex-direction: column
+    align-items: center
+    
+    > section
+        width: 75%
+
 
 section
-    background-color: ()
+    background-color: palette_couleur(light, secondary-warm-light)
+    padding: 2rem 1rem 2rem 1rem
+    margin: 1rem 0 1rem 0
 
-h1 h2
-    font: $polices_ecriture
+
+h1, h2
+    font: police(txt-titre)
+
+a
+    color: palette_couleur(light, accent)
+    font-weight: 500

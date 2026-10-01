@@ -1,26 +1,68 @@
 @use "sass:map"
 @use "../abstracts/variables" as *
 
+.color-displayer
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 0.5rem
+    column-gap: 1.5rem
+    list-style: none
+    width: 120ch
 
-.color-display
-	@each $name, $data in $palette_couleurs
-		$color:			map.get($data, color)
-		$description:	map.get($data, description)
 
-		&--#{$name}
-			display: flex
-			align-items: center
-			gap: 0.5rem
+[class^="color-displayer__swash--"]
+    display: flex
+    align-items: center
 
-			&::before
-				content: ""
-				width: 25px
-				height: 25px
-				border-radius: 50%
-				display: inline-block
-				background-color: $color
-				border-style: solid
-				border-color: #2c2c2c
+    &::before
+        content: ""
+        width: 25px
+        height: 25px
+        display: inline-block
+        border-radius: 50%
+        border: 3px solid #2c2c2c
 
-			&::after
-				content: "#{$color} - #{$description}"
+    &::after
+        margin-left: 0.5rem
+        width: 12ch
+        
+
+[class^="color-displayer__text-display"]
+    // padding: 1rem 1rem 1rem 1rem
+    // width: 100%
+    display: flex
+    // align-content: center
+    flex-direction: row
+    align-items: center
+    gap: 1.5rem
+
+    &::after
+        padding: 2rem 3rem
+        width: 80ch
+        // margin-right: 1rem
+    //     position: absolute
+    //     left: 0px
+
+
+@each $theme, $colors in $palette_couleurs
+    @each $name, $data in $colors
+        $color: map.get($data, color)
+        $description: map.get($data, description)
+        $font-color: map.get($data, txt-color)
+
+        .color-displayer
+            &__text-display--#{$theme}--#{$name}
+
+                &::after
+                    color: $font-color
+                    background-color: $color
+                    content: "Exemple de texte -- couleur #{$description} "
+
+                    
+            &__swash--#{$theme}--#{$name}
+                &::before
+                    background-color: $color
+
+                &::after
+                    content: "#{$color}"
