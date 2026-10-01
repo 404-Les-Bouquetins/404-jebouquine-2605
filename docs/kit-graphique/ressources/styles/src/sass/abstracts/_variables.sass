@@ -5,7 +5,6 @@
 {
   @if map.has-key($polices_ecriture, $nom)
     @return map.get($polices_ecriture, $nom);
-
   @error "La police '#{$nom}' n'existe pas dans la map $polices_ecriture.";
 }
 
@@ -23,121 +22,140 @@ $polices_ecriture:
 $txt-light: 	#FFFFFF
 $txt-dark:		#000000
 
-@function couleur_palette($theme, $color)
+// ────────────────────────────────────────────────────
+// FONCTIONS
+// ────────────────────────────────────────────────────
+//selectionner une couleur parmis un type   
+//usage: couleur_palette(<light|dark|action>, <color>)
+@function couleur_palette($type, $nom)
 {
-  @if map.has-key($palette_couleurs, $theme)
-  {
-    $theme-map: map.get($palette_couleurs, $theme);
-
-    @if map.has-key($theme-map, $color)
+    @if (($type == light) or ($type == dark))
     {
-      @return map.get(map.get($theme-map, $color), color);
+        @if map.has-key($themes, $type)
+        {
+            $theme-map: map.get($themes, $type);
+            @if map.has-key($theme-map, $nom)
+            {
+                $color-map: map.get($theme-map, $nom);
+                @return map.get($color-map, color);
+            }
+            @error "La couleur '#{$nom}' n'existe pas dans le thème '#{$type}'.";
+        }
     }
-
-    @error "La couleur '#{$color}' n'existe pas dans le thème '#{$theme}'.";
-  }
-
-  @error "Le thème '#{$theme}' n'existe pas dans la map $palette_couleurs.";
+	@if ($type == action)
+	{
+		@if map.has-key($actions, $nom)
+		{
+			$action-map: map.get($actions, $nom);
+			@return map.get($action-map, color);
+		}
+		@error "L'action '#{$nom}' n'existe pas dans la map '#{$type}'.";
+	}
+	@error "Le type '#{$type}' n'existe pas. Utilisez 'light', 'dark' ou 'action'.";
 }
 
-
+// ────────────────────────────────────────────────────
+// MAP DE DONNEES
+// ────────────────────────────────────────────────────
+// ─────────────────────────────────────
+// PALETTE
+// ─────────────────────────────────────
 $palette_couleurs
 (
-    light:      $light,
-    dark:       $dark,
+    themes:     $themes,
     actions:    $actions,
 )
 
-//TODO: CHECK ME
-$light:
+
+// ─────────────────────────────────────
+// THEMES
+// ─────────────────────────────────────
+//TODO: CHECK ME, DO DARK
+$themes
 (
-	primary:
-	(
-		color:			$crm-orange,
-		description:	"Orange CRM",
-		txt-color:		$txt-light,
-	),
-	accent:
-	(
-		color:			$crm-bleu,
-		description:	"Bleu CRM",
-		txt-color:		$txt-light,
-	),
-	secondary-neutral-light:
-	(
-		color:			$bg-light-grey,
-		description:	"Fond neutre - clair",
-		txt-color:		$txt-dark,
-	),
-	secondary-neutral-dark:
-	(
-		color:			$bg-grey,
-		description:	"Fond neutre - Foncé",
-		txt-color:		$txt-dark,
-	),
-	secondary-warm-light:
-	(
-		color:			$bg-thick-cream,
-		description:	"Fond chaud - clair",
-		txt-color:		$txt-dark,
-	),
-	secondary-warm-dark:
-	(
-		color:			$bg-light-cream,
-		description:	"Fond chaud - foncé",
-		txt-color:		$txt-dark,
-	)
+    light:
+    (
+        primary:
+        (
+            color:			$crm-orange,
+            description:	"Orange CRM",
+            txt-color:		$txt-light,
+        ),
+        accent:
+        (
+            color:			$crm-bleu,
+            description:	"Bleu CRM",
+            txt-color:		$txt-light,
+        ),
+        secondary-neutral-light:
+        (
+            color:			$bg-light-grey,
+            description:	"Fond neutre - clair",
+            txt-color:		$txt-dark,
+        ),
+        secondary-neutral-dark:
+        (
+            color:			$bg-grey,
+            description:	"Fond neutre - Foncé",
+            txt-color:		$txt-dark,
+        ),
+        secondary-warm-light:
+        (
+            color:			$bg-thick-cream,
+            description:	"Fond chaud - clair",
+            txt-color:		$txt-dark,
+        ),
+        secondary-warm-dark:
+        (
+            color:			$bg-light-cream,
+            description:	"Fond chaud - foncé",
+            txt-color:		$txt-dark,
+        )
+    ),
+    dark:
+    (
+        primary:
+        (
+            color:			$crm-orange,
+            description:	"Orange CRM",
+            txt-color:		$txt-light,
+        ),
+        accent:
+        (
+            color:			$crm-bleu,
+            description:	"Bleu CRM",
+            txt-color:		$txt-light,
+        ),
+        secondary-neutral-light:
+        (
+            color:			$bg-light-grey,
+            description:	"Fond neutre - clair",
+            txt-color:		$txt-dark,
+        ),
+        secondary-neutral-dark:
+        (
+            color:			$bg-grey,
+            description:	"Fond neutre - Foncé",
+            txt-color:		$txt-dark,
+        ),
+        secondary-warm-light:
+        (
+            color:			$bg-thick-cream,
+            description:	"Fond chaud - clair",
+            txt-color:		$txt-dark,
+        ),
+        secondary-warm-dark:
+        (
+            color:			$bg-light-cream,
+            description:	"Fond chaud - foncé",
+            txt-color:		$txt-dark,
+        )
+    )
 )
 
-//TODO: DO ME
-$dark:
-(
-	primary:
-	(
-		color:			$crm-orange,
-		description:	"Orange CRM",
-		txt-color:		$txt-light,
-	),
-	accent:
-	(
-		color:			$crm-bleu,
-		description:	"Bleu CRM",
-		txt-color:		$txt-light,
-	),
-	secondary-neutral-light:
-	(
-		color:			$bg-light-grey,
-		description:	"Fond neutre - clair",
-		txt-color:		$txt-dark,
-	),
-	secondary-neutral-dark:
-	(
-		color:			$bg-grey,
-		description:	"Fond neutre - Foncé",
-		txt-color:		$txt-dark,
-	),
-	secondary-warm-light:
-	(
-		color:			$bg-thick-cream,
-		description:	"Fond chaud - clair",
-		txt-color:		$txt-dark,
-	),
-	secondary-warm-dark:
-	(
-		color:			$bg-light-cream,
-		description:	"Fond chaud - foncé",
-		txt-color:		$txt-dark,
-	)
-)
-
-
-@function couleur_action($couleur, $color)
-{
-    @if map.has-key($polices_ecriture, $nom)
-        @return map.get( map.get($palette_couleurs, $theme), $color);
-
-    @error "La couleur '#{$nom}' n'existe pas dans la map $palette_couleurs.";
-}
+// ─────────────────────────────────────
+// ACTIONS
+// ─────────────────────────────────────
 $actions:
 (
 	error:

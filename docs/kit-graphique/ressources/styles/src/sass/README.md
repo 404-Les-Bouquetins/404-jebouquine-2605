@@ -33,7 +33,9 @@ Le sass peut compiler les `.sass`, `.scss` et `.css` en un seul fichier `css`.
 - Les éléménets partiels en .sass sont signifiées avec un `_` en début de nom.
   - exemple: `_boutton.sass`
 - Le `main.sass` sert à assembler tous les éléménts partiels .sass
-## abstracts
+
+# explications des elements de la découpe sass
+## 💡abstracts
 > ___Comment fonctionne mon design ?___
 >
 > ![exemple](../../../../../../foreign/ressources/imgs/readmes/sass/dir_abstract.png "dossier abstract")
@@ -49,7 +51,7 @@ Le sass peut compiler les `.sass`, `.scss` et `.css` en un seul fichier `css`.
 ### _variables.sass
 - centraliser les variables du site ici.
 
-## base
+## 💡base
 > ___Quelles sont mes règles de base ?___
 >
 > ![exemple](../../../../../../foreign/ressources/imgs/readmes/sass/dir_base.png "dossier base")
@@ -69,7 +71,7 @@ Le sass peut compiler les `.sass`, `.scss` et `.css` en un seul fichier `css`.
 ### _reset.sass
 - nos reset de margin, padding, mettre le box-sizing par défaut...
 
-## layout
+## 💡layout
 > ___Comment ma page est-elle structurée ?___
 > 
 > ![exemple](../../../../../../foreign/ressources/imgs/readmes/sass/dir_layout.png "dossier base")
@@ -82,7 +84,7 @@ Le sass peut compiler les `.sass`, `.scss` et `.css` en un seul fichier `css`.
 - pour définir ici l'utilisation des grids
 
 
-## components
+## 💡components
 > ___Quels sont les éléments réutilisatbles ?___
 > 
 > ![exemple](../../../../../../foreign/ressources/imgs/readmes/sass/dir_components.png "dossier base")
@@ -91,7 +93,7 @@ Le sass peut compiler les `.sass`, `.scss` et `.css` en un seul fichier `css`.
   - ex: _boutton.sass, _caroussel.sass, _carte.sass, _alert.sass, _form.sass, _input.sass
 ...
 
-## pages
+## 💡pages
 > ___Qu'est ce qui est spécifique à ma page ?___
 > 
 > ![exemple](../../../../../../foreign/ressources/imgs/readmes/sass/dir_pages.png "dossier base")
