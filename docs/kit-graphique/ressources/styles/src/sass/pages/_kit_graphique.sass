@@ -1,3 +1,5 @@
+@use "../abstracts/_variables" as *
+    
 main
     section
         width: 75%
@@ -7,3 +9,30 @@ main
 
     > .note
         display: span
+
+
+[class^="theme"]
+    width: 90%
+    border: 1px solid #7e7e7e
+
+    > h3, > h4
+        display: inline-block
+        transform: translate(0, -1.9rem)
+        background: palette_couleur(light, secondary-warm-light)
+        padding: 0.2ch 0.7ch
+
+.theme
+    &--light
+        background-color: palette_couleurs(light, secondary-warm-dark)
+
+    &--dark
+        background-color: #1c1c1c//palette_couleurs(dark, secondary-warm-dark)
+        color: #EEEEEE
+        section
+            background-color: #1c1c1c
+        > h3, > h4
+            background-color: #1c1c1c
+
+    &--actions
+        background-color: palette_couleurs(actions, secondary-warm-dark)
+

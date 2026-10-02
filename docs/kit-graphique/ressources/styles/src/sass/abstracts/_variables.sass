@@ -6,12 +6,13 @@
     @return map.get($polices_ecriture, $nom);
   @error "La police '#{$nom}' n'existe pas dans la map $polices_ecriture.";
 
-
+//renvois la police parmis les polices
+//usage: police()
 $polices_ecriture:
 (
-	txt-titre:   ('Montserrat', serif),
-	txt-body:     ('Sarabun', sans-serif),
-	txt-dys:      ("OpenDyslexic", sans-serif),
+	titre:      ('Montserrat', sans-serif),
+	body:       ('Sarabun', sans-serif),
+	dyslexic:   ("OpenDyslexic", sans-serif),
 )
 
 
@@ -40,7 +41,7 @@ $font-dark:		#000000
 // FONCTION
 // ────────────────────────────────────────────────────
 //renvois le paquet de données d'une couleur (contenant: color, description, txt-color)  
-//usage: couleur_palette(<light|dark|action>, <color>)
+//usage: couleur_palette(<light|dark|actions>, <color>)
 @function palette_data($theme, $nom)
     @if not map.has-key($palette_couleurs, $theme)
         @error "Le thème '#{$theme}' n'existe pas. Utilisez 'light', 'dark' ou 'actions'."

@@ -1,8 +1,8 @@
 @use "../abstracts/_variables" as *
 
-body
+body, input, button
     background-color: palette_couleur(light, secondary-warm-dark)
-    font: police(txt-body)
+    font-family: police(body)
 
 main
     display: flex
@@ -15,13 +15,30 @@ main
 
 section
     background-color: palette_couleur(light, secondary-warm-light)
-    padding: 2rem 1rem 2rem 1rem
     margin: 1rem 0 1rem 0
 
+//TODO, nice idea, bad execution: FIX ME
+main    
+    >section
+        > h1, > h2, > h3, > h4
+        padding: 2rem 1rem 2rem 1rem
+        font-family: police(titre)
 
-h1, h2
-    font: police(txt-titre)
+section
+    section
+        > h1, > h2, > h3 
+            margin-left: 1rem
 
+        > h4
+            margin-left: 2rem
 a
     color: palette_couleur(light, accent)
     font-weight: 500
+
+.police
+    
+    &--dyslexic
+        font-family: police(dyslexic)
+
+    &--body
+        font-family: police(body)
