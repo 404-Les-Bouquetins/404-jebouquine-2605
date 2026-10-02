@@ -14,7 +14,9 @@
         <header>
             <h1>Kit Graphique JeBouquine</h1>
             <img src="./img/Logo-JeBouqine.svg" alt="Logo de Je Bouquine">
-            <p>JeBouquine.com est un projet de site e-commerce spécialisé dans la vente de livres, développé par l'équipe 404 Les Bouquetins dans le cadre des formations Concepteur Développeur d'Applications (CDA) et Développeur Web et Web Mobile (DWWM).</p>
+            <p>JeBouquine.com est un projet de site e-commerce spécialisé dans la vente de livres, développé par
+                l'équipe 404 Les Bouquetins dans le cadre des formations Concepteur Développeur d'Applications (CDA) et
+                Développeur Web et Web Mobile (DWWM).</p>
         </header>
         <nav>
             <ul>
@@ -22,8 +24,6 @@
                 <li><a href="#Typographie">Typographie</a></li>
                 <li><a href="#BoutonComposant">Boutons et composants</a></li>
                 <li><a href="#">Icônes et visuels</a></li>
-                <li><a href="#">Responsive Design</a></li>
-                <li><a href="#">Accessibilité</a></li>
             </ul>
         </nav>
         <section class="PaletteCouleurs" id="PaletteCouleurs">
@@ -118,21 +118,21 @@
             <h2>Boutons et composants</h2>
             <section class="composants">
                 <h3>Navbar</h3>
-                    <nav class="composants__Nav">
-                        <ul>
-                            <li class="composants__Nav--listes"><img src="./img/home.svg" alt="icone Acceuil"></li>
-                            <li class="composants__Nav--listes"><img src="./img/panier.svg" alt="icone panier"></li>
-                            <li class="composants__Nav--listes"><img src="./img/compte.svg" alt="icone compte"></li>
-                            <li class="composants__Nav--listes"><img src="./img/liste.svg" alt="icone wishlist"></li>
-                        </ul>
-                    </nav>
+                <nav class="composants__Nav">
+                    <ul>
+                        <li class="composants__Nav--listes"><img src="./img/home.svg" alt="icone Acceuil"></li>
+                        <li class="composants__Nav--listes"><img src="./img/panier.svg" alt="icone panier"></li>
+                        <li class="composants__Nav--listes"><img src="./img/compte.svg" alt="icone compte"></li>
+                        <li class="composants__Nav--listes"><img src="./img/liste.svg" alt="icone wishlist"></li>
+                    </ul>
+                </nav>
             </section>
-            <section class="composants__bouton">
+            <section class="composants__boutonTag">
                 <h3>Bouton Tag</h3>
                 <button class="Bouton__tag inactive">inactive</button>
                 <button class="Bouton__tag idle">idle / active</button>
             </section>
-            <section class="composants">
+            <section class="composants__cards">
                 <h3>Cards</h3>
                 <section class="cards">
                     <h4>Laetitia Colombani</h4>
@@ -140,30 +140,23 @@
                     <img src="./img/couverture.webp" alt="couverture du livre">
                 </section>
             </section>
-                <section class="composants">
-                    <h3>Carousel Cards</h3>
-                    <section class="carousel__cards">
-                        <button class="left"><</button>
-                        <section class="carousel__cards__carousel">
-                            <section class="cards">
-                                <h4>Laetitia Colombani</h4>
-                                <p>18,90 €</p>
-                                <img src="./img/couverture.webp" alt="couverture du livre">
-                            </section>
-                            <section class="cards">
-                                <h4>Laetitia Colombani</h4>
-                                <p>18,90 €</p>
-                                <img src="./img/couverture.webp" alt="couverture du livre">
-                            </section>
-                                <section class="cards">
-                                <h4>Laetitia Colombani</h4>
-                                <p>18,90 €</p>
-                                <img src="./img/couverture.webp" alt="couverture du livre">
-                            </section>
-                        </section>
-                        <button class="right">></button>
-                    </section>
+            <section class="composant">
+            <h3>Tout les boutons sans images</h3>
+                <section class="boutonSansImgB">
+                    <button class="bouton__sansImg__defaultB bouton__sansImg">default</button>
+                    <button class="bouton__sansImg__inactiveB bouton__sansImg">inactive</button>
+                    <button class="bouton__sansImg__hoverB bouton__sansImg">hover</button>
+                    <button class="bouton__sansImg__activeB bouton__sansImg">active</button>
                 </section>
+                <section class="boutonSansImgO">
+                    <button class="bouton__sansImg bouton__sansImg__defaultO">default</button>
+                    <button class="bouton__sansImg bouton__sansImg__inactiveO">inactive</button>
+                    <button class="bouton__sansImg bouton__sansImg__hoverO">hover</button>
+                    <button class="bouton__sansImg bouton__sansImg__activeO">active</button>
+                </section>
+            </section>
+        </section>
+
         </section>
     </main>
 </body>

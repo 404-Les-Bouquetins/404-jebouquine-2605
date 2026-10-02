@@ -9,6 +9,7 @@
     --light-cream:#F5EEEB;
     --light-grey:#F5F6F9;
     --bg-inactive:#e3e3e3;
+    --body-cl:#111111;
     --txt-inactive:#8b8b8b;
     --titre-police:'Montserrat',sans-serif;
     --texte-courant:'Sarabun',sans-serif;
@@ -125,7 +126,8 @@ th,td
     cursor: pointer;
     border: none;
     width: fit-content;
-    padding: 13px 15px;
+    height: 47px;
+    padding: 0 15px;
     border-radius: 69px;
 }
 .Bouton__tag.inactive
@@ -143,7 +145,6 @@ th,td
     color: #fff;
     background-color: var(--crm-secondary);
 }
-/* Cards carroussel */
 .cards
 {
     width: 124px;
@@ -181,17 +182,70 @@ th,td
     order: -2;
 }
 
-/* Carousel */
-.carousel__cards
+
+/* bouton */
+.boutonSansImgB,.boutonSansImgO
 {
     display: flex;
-    width: 412px;
-    gap:25px;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom:10px ;
 }
-.carousel__cards__carousel
+.bouton__sansImg
 {
-    display: flex;
-    width: 270px;
-    gap: 22px;
-    overflow-x:auto;
+    width: 250px;
+    box-sizing: border-box;
+    height: 44px;
+    border-radius: 25px;
+    border: none;
+    isolation: isolate;
+    position: relative;
+    font-weight: 600;
+    text-align: center;
+    color: var(--body-bg);
 }
+.bouton__sansImg__defaultB
+{
+    background-color: var(--crm-primary);
+}
+.bouton__sansImg__inactiveB::before,.bouton__sansImg__inactiveO::before
+{
+    display: block;
+    content: "";
+    border-radius: 25px;
+    position: absolute;
+    inset: 0;
+    background-color: var(--light-grey);
+    opacity: 0.3;
+    mix-blend-mode: lighten;
+}
+.bouton__sansImg__inactiveB
+{
+    background-color: var(--crm-primary);
+}
+.bouton__sansImg__hoverB::before,.bouton__sansImg__hoverO::before,.bouton__sansImg__activeB::before,.bouton__sansImg__activeO::before
+{
+    display: block;
+    content: "";
+    border-radius: 25px;
+    position: absolute;
+    inset: 0;
+    opacity: 0.2;
+    background-color: var(--body-cl);
+    mix-blend-mode: overlay;
+}
+.bouton__sansImg__hoverB,.bouton__sansImg__hoverO
+{
+    background-color: var(--crm-primary);
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.bouton__sansImg__activeB,.bouton__sansImg__activeO
+{
+    background-color: var(--crm-primary);
+    border: 3px solid rgba(0, 0, 0, 0.5);
+}
+.bouton__sansImg__defaultO,.bouton__sansImg__inactiveO,.bouton__sansImg__hoverO,.bouton__sansImg__activeO
+{
+    background-color: var(--crm-secondary);
+}
+
